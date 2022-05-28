@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <form>
+        <label for="search"> Search </label>
+        <input type="search" id="search" />
+        <button id="btnSearch">Go</button>
+      </form>
+      <div class="out"></div>
+    </main>
+    <script>
+      let APIKEY = "JYdFGpdAiDUFa83XhfCK0tb0yyF6JjuZ";
+      document.addEventListener("DOMContentLoaded", init);
+      function init() {
+        document.getElementById("btnSearch").addEventListener("click", (ev) => {
+          ev.preventDefault();
+          let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
+          let str = document.getElementById("search").value.trim();
+          url = url.concat(str);
+          console.log(url);
+          fetch(url)
+            .then((response) => response.json())
+            .then((content) => {
+              console.log(content.data);
+              console.log("META", content.meta);
+              let fig = document.createElement("figure");
+              let img = document.createElement("img");
+              let fc = document.createElement("figcaption");
+              img.src = content.data[0].images.downsized.url;
+              img.alt = content.data[0].title;
+              fc.textContent = content.data[0].title;
+              fig.appendChild(img);
+              fig.appendChild(fc);
+              let out = document.querySelector(".out");
+              out.insertAdjacentElement("afterbegin", fig);
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Filtering the strings</h1>
+    <ul></ul>
+
+    <script>
+      const list = document.querySelector("ul");
+      list.innerHTML = "";
+      let greeting = [
+        "Happy Birthday",
+        "Good Morning, Happy holi man!!",
+        "Keep grinding, Dont stop... Its Holi",
+        "Come to play Holi",
+        "Stop asking to play holi man",
+        "Goodnight man!!",
+      ];
+
+      for (let i = 0; i < greeting.length; i++) {
+        if (greeting[i].indexOf("Holi") !== -1) {
+          let listItem = document.createElement("li");
+          listItem.textContent = greeting[i];
+          list.appendChild(listItem);
+        }
+      }
+    </script>
+  </body>
+</html>

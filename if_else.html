@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Greeting</button>
+    <script>
+      let greet = document.querySelector("button");
+      greet.addEventListener("click", showMsg);
+
+      function showMsg() {
+        var time = prompt("Hey, Whats the time?");
+        if (time >= 0 && time <= 12) {
+          alert("Good Morning!!");
+        } else if (time >= 13 && time <= 16) {
+          alert("Good afternoon");
+        } else if (time >= 17 && time <= 24) {
+          alert("Good evening");
+        }
+      }
+    </script>
+  </body>
+</html>
