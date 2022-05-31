@@ -371,3 +371,22 @@ let n3 = [...n1,...n2]
 
 n3 ----> [1,2,3,4,5,6]
 ```
+
+# Async , await
+
+- Async is used as a promise . It'll be executed when its fnished.
+- **_Await_** is used to run the particular execution afer its finished . It'll execute the further code unless its finished .
+- `.then` is used to print the await statement if its completed, and if not then it'll just move to further steps.
+
+* It is handled asynchronously.
+
+# Arrows
+
+- This is a way to define function with less number of words or code.
+- Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple paramteres.
+- One liners do not require braces/return, one line will automatically return.
+
+# fetch()
+
+- While writing `.json()` , it'll parse the values(fit them into braces) and make them an object and if we use `.text` then it'll print all the values in the form of text which we dont want as it'll be too big.
+- `stringify` is used to convert an object into string.

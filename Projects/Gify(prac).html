@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="search"> Search </label>
+    <input type="search" id="input" />
+    <button onclick="sendApiReq()">Go</button>
+    <script>
+      function sendApiReq() {
+        var userInput = document.getElementById("input").value;
+        console.log(userInput);
+
+        var gifApi = "l99AsPDl8SEJVUC7O7ccqAlFNZQ0ui5J";
+        var gifUrl = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=g&api_key=${gifApi}&limit=10`;
+
+        fetch(gifUrl)
+          .then(function (data) {
+            return data.json();
+          })
+          .then(function (json) {
+            console.log(json.data[0].images.downsized.url);
+            var imgPath = json.data[0].images.downsized.url;
+            var img = document.createElement("img");
+            img.setAttribute("src", imgPath);
+            document.body.appendChild(img);
+          });
+      }
+    </script>
+  </body>
+</html>
