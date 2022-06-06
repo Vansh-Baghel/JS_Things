@@ -1,9 +1,24 @@
+# Motivation
+
+![motivation](./Resources_imgs%2Cpdfs/Motivation.jpeg)
+
+- You will feel like the things are difficult to code when you start applyin your own logic.
+- Once you exit the tutorial & code on your own , you will feel like coding is too tough but its completely normal .
+- You will never completely learn the web dev because its too vast field and good professionals always admit that they dont know full web dev.
+- So just keep going, get into many errors, keep the mindset to solve them, get frustrated and uncomfortable behind a single file of code and solve it but dont stop your journey and feel that you are not made for coding!!
+
+---
+
+---
+
 ![type_of_JS](./Resources_imgs%2Cpdfs/DTL.jpeg)
+
+---
+
+---
 
 # DOM (Document Object Model)
 
-- Whenever we make a website, we create a document (ie HTML)
-  and give styling to it through DOM itself by linking it to the document (by using CSS) .
 - Document :- HTML
 
   Object :- All the elements/tags which we use.
@@ -20,23 +35,15 @@
 
 ## prompt
 
-- Used to popup the information related to input text.
+- Used to popup the information related to input text and to get the input.
 
-## doc_button.addEventListener('click',inputMsg);
-
-- `addEventListener` is used to make responsive to any element.
-  EG:- 'click'
-- doc_button is the assigned name of the variable and inputMsg is the user defined functionName .
-
-## console.log()
-
-- Its used to get output not on the web page, but in the inspect console section.
+* Always returns string even if u add any number.
 
 # Variables
 
 ## Rules of variables
 
-- Can contain :- '\_' and '$'
+- Can contain :- `_` and `'$'`
 - Can contain number but only in between and not in the start.
 
 ## Cases of variables
@@ -57,7 +64,7 @@
 
 [Types of Operators in Detail](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 
-== and ===
+`==` & `===`
 
 - The difference between both of them is that '==' cannot compare string and int while '===' can identify the difference between them.
   > x = 3 == '3' ------ True  
@@ -84,10 +91,10 @@ a + " is a good " + b
 3. Do-while
 4. for..in
 
-- for..in is used to run a loop inside any object to access the value from key word. (key:value pair is used here).
-- for..in iterates over all enumerable property keys of an object
+- `for..in` is used to run a loop inside any object to access the value from key word. (key:value pair is used here).
+- `for..in` iterates over all enumerable property keys of an object
 
-```CSS
+```JS
 console.log(key , objectName[key])
 This will print 'key value' of that object.
 ```
@@ -96,16 +103,6 @@ This will print 'key value' of that object.
 
 - This directly gives us the value without worring about the key word.
 - for..of iterates over the values of an iterable object.
-
-# Function
-
-Syntax :- `function name(parameter1,p2,p3){ code } `
-
-`name(1,2,3);` is used to call the function.
-
-- We need to pass certain value if we give the function some parameter.
-
-* Functions are written in 2 types:- 1 is normal and another is when we return certain value.
 
 # Objects
 
@@ -139,6 +136,8 @@ let genderProperty = "gender";
 - Basically, **Primitve** is **Pass by value** & **Reference** is **Pass by reference**.
 - Check out `Primitive VS Reference Datatypes` file.
 
+* Research more from google.
+
 ## Ways to clone an Object
 
 - `...`
@@ -160,8 +159,7 @@ let genderProperty = "gender";
 
 ### Constructor Function
 
-- Most important dissimilarity is that we use `'='` while writing properties.
--
+- Most important dissimilarity is that we use `'='` while writing properties(variable inside objects).
 
 * Here, we use different keywords like `this, new` .
 * _this_ is used to write properties inside this function. _new_ is used to assign the function to the object which acts as return keyword.
@@ -216,9 +214,7 @@ chair.disc_value()
 
 # Strings
 
-- Always use '' , "" or `` to define strings.
 - We can also concatinate string and any number.
-- We can also change the datatypes from no. to string and vice versa.
 
 ```JS
   1. "hello" + 100
@@ -390,3 +386,18 @@ n3 ----> [1,2,3,4,5,6]
 
 - While writing `.json()` , it'll parse the values(fit them into braces) and make them an object and if we use `.text` then it'll print all the values in the form of text which we dont want as it'll be too big.
 - `stringify` is used to convert an object into string.
+
+# How to solve problem
+
+- Understanding the problem
+- Breaking into sub-problems
+
+# Debugging
+
+- By using `console.warn` and `console.error` in js, you can change the console ka looks.
+
+* We can debug from the google prompt(inspect) from **sources** by giving the breakpoint and running it .
+
+# textContent
+
+- It selects the text of any specified element.
