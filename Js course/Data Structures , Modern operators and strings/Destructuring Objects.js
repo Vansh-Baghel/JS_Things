@@ -33,7 +33,7 @@ const restaurant = {
   },
 };
 
-// These properties dont need to match with the upper functional parameter.
+// These properties(variables inside the object) dont need to match with the upper functional parameter.
 restaurant.orderDelivery({
   time: "22:30",
   address: "Via del Sole, 21",
@@ -41,11 +41,11 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 
-// We use curly braces to define the variable names.
+// We use curly braces to define the property names.
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
-// Changing property names by assigning variables
+// Changing property names by assigning new names and this can be done on the LHS only.
 const {
   name: restaurantName,
   openingHours: hours,
@@ -61,6 +61,7 @@ console.log(menu, starters);
 let a = 111;
 let b = 999;
 const obj = { a: 23, b: 7, c: 14 };
+// If curly braces nhi hota, then it wouldve stored the a,b new values in b and a woulve been 111 only.
 ({ a, b } = obj);
 console.log(a, b);
 
