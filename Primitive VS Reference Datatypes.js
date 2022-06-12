@@ -1,6 +1,6 @@
 //Primitive Datatype
 
-let number = 10;
+let number = 19;
 let number_2 = number;
 number = 15;
 // Pass by value

@@ -89,6 +89,7 @@ a + " is a good " + b
 1. For
 2. While
 3. Do-while
+
 4. for..in
 
 - `for..in` is used to run a loop inside any object to access the value from key word. (key:value pair is used here).
@@ -101,8 +102,9 @@ This will print 'key value' of that object.
 
 5. for..of
 
-- This directly gives us the value without worring about the key word.
-- for..of iterates over the values of an iterable object.
+- for..of iterates over the values of an iterable object or array.
+
+* Used to use all elements from a particular loop.
 
 # Objects
 
@@ -387,6 +389,8 @@ n3 ----> [1,2,3,4,5,6]
 - While writing `.json()` , it'll parse the values(fit them into braces) and make them an object and if we use `.text` then it'll print all the values in the form of text which we dont want as it'll be too big.
 - `stringify` is used to convert an object into string.
 
+# JS Udemy Notes
+
 # How to solve problem
 
 - Understanding the problem
@@ -401,3 +405,271 @@ n3 ----> [1,2,3,4,5,6]
 # textContent
 
 - It selects the text of any specified element.
+
+# classList
+
+- Used to add, remove , toggle or replace the elements of html .
+
+# DRY code (Do Not Repeat Yourself)
+
+- It is very important to not to repeat the steps of codes.
+- A very big disadvantage is that we need to change all the lines if we want to change one code into that repeated code, it can become a nightmare if the code is too big.
+
+# keydown (An event of eventListener)
+
+- Used to make keys responsive on a web page.
+
+# JS Behind the scenes THEORY
+
+## Concurrency Model
+
+- It means that how js engine handles multiple tasks at the same time.
+
+## Compilation VS Interpretation
+
+- **Compilation** means code is converted into machine code at once & then it can be used anytime we wish
+- **Interpretation** means code will written and converted at the same time so the execution takes alot of time to be converted which is not acceptable.
+- JS is **Just-In-Time Compilation** , means ki first it'll be compiled and then immediately executed.
+
+## Runtime in browser
+
+Includes 3 things:-
+
+### JS engine
+
+- **Call Stack** is the place where all the codes are executed
+- **Heap** is the place which stores all the objects our application needs.
+
+### Web APIs
+
+### CallBack Queue
+
+- EG:- event listener --> click, etc
+
+## Types of scope in JS
+
+### Global scope
+
+- These are variables declared outside any function and will be accessible everywhere.
+
+### Function scope
+
+- These are variables that are accessed inside the function. Also called local scope.
+
+### Block scope
+
+- These are variables only accessible inside block means codes written inside the braces.
+
+* All functions k variables are block scope in strict mode.
+
+- Only _let_ and _const_ are applied in this scope.
+  > var is a function scope and not a block scope . let and const are block scope
+  - Block scopes are not accessible outside the blocks , function scopes are accessible inside the function itself.
+
+### Scope chain
+
+Means the order on which the functions are dependent on other functions are written in the code.  
+**_Variable lookup_**
+
+- All variables can be accessible from parent function/variable . It cant go backwards , i.e. , the highest priority cannot be of bottom function .
+
+* The scope only works upwards and not side ways, means 2 variables inside a common function cannot have access with the variables. In easy words , 2 child of a parent cannot use each other.
+* Scope doesnt have any effect by function call, it only sees the upward order.
+* The scope chain **isnt important** if the variable we are looking for is in the **current scope** , for eg, it'll print a variable which is inside the same block rather than printing that variable wiht same name which is defined in the global variable.
+* If we reassign outer scope's variable inside the inner scope, then the new content will be from inner scope . But if we declare the same variable inside the inner scope then it'll ignore the inner scope and will print outer scope ka value.
+
+## Hoisting
+
+- It makes some types of variables accessible before they get declared.
+
+* WE cant use hoisting for **let** & **const** variables and it'll throw show _uninitialized_, functions work & var shows weird behaviour by giving the output as **undefined**..
+
+### TDZ (Temporal Dead Zone)
+
+- let and const variables are not hoisting and will show `cannot access before initializing` if we try to use before initialization.
+- TDZ is the zone from where the scope starts till the line where the variable is declared.
+
+* It is always safe to use variable after declaring and a very bad practice is to use it before declaration.
+
+* We need both practice in our codes :- To use a variable before declaration , To use a variable after declaration.
+
+## Practicing Hoisting & TDZ
+
+- We cannot call function stored in variable before declaring, but we can call function before declaring if its not stored in any variable.
+- In case of function , var will give error of `not a function` & for let it'll be uninitialized.
+- We can easily make mistake while using var variable during loops and it'll be really hard to detect the problem.
+- The best practice is to use `const` when we dont need to change a variable , to avoid the use of `var` and to use `let` if we want to change the variable later.
+
+* Always declare functions first and use only after declaration and declare variables first.
+
+## This keyword
+
+- 'this' keyword depends on _how_ is the function called, it'll act in different ways .
+
+### Rules
+
+- Inside a regular function call, _this_ keyword must be undefined.
+
+### Method way
+
+- If its used as a method, then will check the object which called it and find the asked method inside it.
+  > EG:- vansh.calcAge(); Imagine calcAge is a method in which 'this' keyword is used, here vansh will become an object.
+
+### Simple function call
+
+- In strict mode, it'll show undefined. In normal mode , it'll show window object which could be problematic .
+
+### Arrow functions
+
+- Arrow functions do not get their own 'this' keyword, it'll point 'this' of surrounding function.
+
+* The surrounding function can be the parent function of that arrow function and if its not a child function , then it'll show window function.
+
+* Never use arrow function as a method (means function inside an object).
+
+```JS
+ let vansh = {
+  greet : () => {}}
+
+  // Use this
+   let vansh = {
+  greet : function() {}}
+
+```
+
+### EventListener
+
+- DOM element on which it is attached
+
+### Duplication object in another variable
+
+- We can duplicate an object inside another variable .
+- Refer this_keyword_practice for better understanding.
+
+### Regular VS Arrow function
+
+- Refer the file.
+
+# Data Structures, Modern operators and strings
+
+## Destructuring arrays and object
+
+- Always uses brackets while declaring variables.
+
+* To use elements inside array and objects by giving the variable names.
+
+- Refer the file for better and proper understanding.
+
+* Can change the object name and it can only be done on the LHS side in the curly braces with colom. Use parenthesis while destructuring key names of an object to get the values of objects.
+
+## Spread Operator
+
+- Used to concat arrays.
+
+* Used to get a array elements individually rather than to get a whole array in nested form.
+
+* It can also be used as destructuring because here we dont assign variables to every elements of array.
+
+## Rest Operator
+
+- Same like Spread , just the difference is that it is used on the left side in the declare part .
+
+* Always used in the end .
+  > EG:- let (a, b, ...c) and not let (a,...b,c)
+
+## Short Circuiting
+
+- The logic is it'll immediately stop checking if the value is false in _AND_ and will return the falsy value; and in _OR_ , it'll check the second element and if both are false then it'll return second else will return first.
+
+* For `OR` it will return _first value_ for the values and will return _second value_ if _all_ values are false.
+
+* For `AND` it will return _first value_ ; and will return _second value_ if all are true.
+
+## Nullish Value
+
+- Will see null and undefined as _falsy_ value and will return the other value present with it.
+- Will return 1st value if none of _null_ or _undefined_ is present.
+
+* Will also return 0 if its written first and if _null_ and _undefined_ are not present.
+
+## Enhanced Objects Literals
+
+- Can write object functions (methods) in smaller way .
+  > EG:- order : function (para1, para2) ---> order(para1, para2)
+
+## Optional Chaining
+
+- Alternative of this chaining is the use of _if-else_ statement , which sometimes goes too big to write & through this we can get the desired output in a single step.
+
+* Used to check if any element or method exists or not.
+* Nullish and optional chaining are best combination to use .
+
+- All the written path before the question mark is been checked as its true or false.
+- It works for methods (function inside object) to check if some items are present or not.
+- Also, works for array.
+
+* It makes the code readable by avoiding undefined , error or none outputs.
+
+- Undefined is still better than error or none output.
+
+## Object notations
+
+- Variables :- Called properties ehich contains keys and values.
+- Functions :- Called methods
+
+## Object.keys() & Object.values()
+
+- Used to extract NAMES from the object.
+
+* It saves the energy to loop any object k properties(variables inside object).
+* Used to extract values from the object.
+
+## Object.entries() & .entries
+
+- We use entries to get the entry values in array , and use Object.entries to get entries values of objects.
+
+* Returns both keys and values at the same time , so we can avoid writing the code twice for getting them .
+
+## For loops
+
+1. for in
+
+- `for..in` is used to run a loop inside any object to access the value from key word. (key:value pair is used here).
+- `for..in` iterates over all enumerable property keys of an object
+
+* _key names_ can be extracted , if not then unka _index number_ will be extracted in the case of object. NOTE that the _values_ wont be extracted from this, for values you need to use `for--of`.
+
+2. for of
+
+\*- _for..of_ iterates over the **values** of an iterable object or array.
+\*\* Values can be extracted from the object especially.
+
+- Used to use all elements from a particular loop.
+
+## Sets
+
+- We need to use contructor (`new` keyword) before set
+- It does not repeat the values , the set mut be unique.
+- It is different than arrays, elements cannot be extracted from any sets because it doesn't have index number and all values are unique.
+- If you want elements to be extracted then just use arrays.
+- We can use existing method `has` to check if any values is present or not , also `size` is used to check the length of the set. NOTE that instead of length, we use size.
+
+## Methods we see in Sets and Map
+
+- typeof
+- has :- Returns boolean value.
+- size
+- delete
+- clear :- To remvoe all the elements from the map.
+
+## Iterator in output solution
+
+- Whenever we see output as 'Iterator' while we are extracting any array or object , then simply add **Spread Operator** to fix it.
+
+## Map
+
+- Key and Value are separated just by a comma .
+- The difference in this and object is that object only allows _strings_ to be the keys, but map keys can be _anything_.
+- One way to use map is to store it empty and then keep adding values by set and get methods and another is to add all values by storing it in a variable.
+- Map can be converted to object by using _Spread Operator_ for map variable.
+- To match the type of any variable or key , we use `typeof` keyword and can write the type into the apostrophe.
