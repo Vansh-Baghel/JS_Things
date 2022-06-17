@@ -634,14 +634,12 @@ Means the order on which the functions are dependent on other functions are writ
 
 1. for in
 
-- `for..in` is used to run a loop inside any object to access the value from key word. (key:value pair is used here).
+- `for..in` is used to run a loop inside any **object** to access the value from key word. (key:value pair is used here).
 - `for..in` iterates over all enumerable property keys of an object
-
-* _key names_ can be extracted , if not then unka _index number_ will be extracted in the case of object. NOTE that the _values_ wont be extracted from this, for values you need to use `for--of`.
 
 2. for of
 
-\*- _for..of_ iterates over the **values** of an iterable object or array.
+\*- _for..of_ iterates over the values of an iterable **array**.
 \*\* Values can be extracted from the object especially.
 
 - Used to use all elements from a particular loop.
@@ -670,6 +668,65 @@ Means the order on which the functions are dependent on other functions are writ
 
 - Key and Value are separated just by a comma .
 - The difference in this and object is that object only allows _strings_ to be the keys, but map keys can be _anything_.
-- One way to use map is to store it empty and then keep adding values by set and get methods and another is to add all values by storing it in a variable.
 - Map can be converted to object by using _Spread Operator_ for map variable.
 - To match the type of any variable or key , we use `typeof` keyword and can write the type into the apostrophe.
+
+## JSON data
+
+- Data from web API comes in the special file called JSON.
+
+# Arrays Vs Sets
+
+| Arrays                                  | Sets                               |
+| --------------------------------------- | ---------------------------------- |
+| 1. Use when you need all list of values | 1. Use when you need unique values |
+| 2. Use when you need to manipulate data | 2. Use to remove duplicates        |
+
+# Objects VS Maps
+
+| Objects                                             | Maps                                                 |
+| --------------------------------------------------- | ---------------------------------------------------- |
+| 1. Easier to write and access values with . and [ ] | 1. Easy to compute size and iterate                  |
+| 2. Only string can be the key name.                 | 2. Any data type can be the key name.                |
+| 3. Use when you need to include functions (methods) | 3. Use when you need to include key and values only. |
+| 4. Use when working with JSON                       | 4. Use when you need keys that are not strings.      |
+
+## Working with strings
+
+- `slice` method is very usefull in strings. `slice(startValue , endValue)` .
+- _-1_ in slice refers to the last value & in `indexOf` it refers to the value which is not present. NOTE :- indexOf is case sensitive method.
+- `trim` is used to remove the blank spaces.
+- `replace` & `replaceAll` is used to replace first value or all values respectively . `replace(oldVal , newVal)`
+- `includes` , `startsWith` & `endsWith` all return a boolean value .
+- `split` is used to split strings into arrays.
+- `join` is used to join array values into a string.
+- `padStart` & `padEnd` is used to add any values prior or after certain value , string's length will be the one which we will specify and if its less then it'll add any char which we will pass. Good example is to replace values like in pincode by \*.
+- `repeat` method is used to repeat
+
+# Deep into functions
+
+## Default functions
+
+- Can use OR operator to set default value to avoid '_undefined_' msg in the output.
+- By passing _undefined_ as parameter, we are printing default value.
+
+## Callback functions
+
+- These are functions which are used inside another function .
+- The parent function is called higher order function and these functions are defined outside the parent function but are used inside it.
+
+## Call method
+
+- Used to point a certain object for _this_ keyword and this pointing is done by the first argument which we pass .
+- It is very useful to use 2 functions at same time , and their inner contnt to form a new value or variable.
+
+## Bind method
+
+- It'll return new function . It borrows method w/o creating its copy.
+- We can also predefine any arguments in this method.
+- First argument will always be referred to this keyword.
+
+## Partial application
+
+- When a certain method is predefined by the argument then its called partial application .
+- Watch example for better understanding. line 201
