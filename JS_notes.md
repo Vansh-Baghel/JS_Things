@@ -240,38 +240,6 @@ chair.disc_value()
       'My name is vansh and age is 19'
 ```
 
-# Imp Methods in strings
-
-You cannot run quokka mai outputs once u save the file.
-
-```JS
-var favShow = "Dragon Ball Z"
-console.log(favShow.length)
-
-console.log(favShow.indexOf("g"))
-
-console.log(favShow[13-1])
-
-console.log(favShow.slice(3,6))
-
-console.log(favShow.toLowerCase())
-
-console.log(favShow.toUpperCase())
-
-Outputs :-
-13
-
-3
-
-Z
-
-gon
-
-dragon ball z
-
-DRAGON BALL Z
-```
-
 ## Exercise
 
 `String_exercise1`
@@ -693,15 +661,19 @@ Means the order on which the functions are dependent on other functions are writ
 
 ## Working with strings
 
-- `slice` method is very usefull in strings. `slice(startValue , endValue)` .
+- `slice` method is used to extract the value certain value from an array and can also slice elements(means any words or numbers). `slice(startValue , endValue)` .
 - _-1_ in slice refers to the last value & in `indexOf` it refers to the value which is not present. NOTE :- indexOf is case sensitive method.
 - `trim` is used to remove the blank spaces.
 - `replace` & `replaceAll` is used to replace first value or all values respectively . `replace(oldVal , newVal)`
 - `includes` , `startsWith` & `endsWith` all return a boolean value .
 - `split` is used to split strings into arrays.
 - `join` is used to join array values into a string.
-- `padStart` & `padEnd` is used to add any values prior or after certain value , string's length will be the one which we will specify and if its less then it'll add any char which we will pass. Good example is to replace values like in pincode by \*.
+- `padStart` & `padEnd` is used to add any values prior or after certain value & it wont change the original array.
 - `repeat` method is used to repeat
+
+## Takeaway from exercise
+
+- The thing I learnt is that we must create a _for_ loop to **split()** the array elements into two words.
 
 # Deep into functions
 
@@ -730,3 +702,62 @@ Means the order on which the functions are dependent on other functions are writ
 
 - When a certain method is predefined by the argument then its called partial application .
 - Watch example for better understanding. line 201
+
+## Immediately invoked function
+
+- Means to not store a function in a variable . We can also call these functions.
+- We add _paranthesis_ around them to make it considerable.
+
+## Data encapsulation
+
+- When one variable is defined in a function and is not accessible outside the function .
+- Its a ttype of a private variable for global scope.
+
+## Concept of Closure
+
+- Imagine a parent function with variables and a child function .
+- This concepts says that the child function can have access to the variables. We know that these variables cannot be used outside the function.
+
+# 11 . Working with arrays
+
+## Methods
+
+### Slice and splice methods
+
+- Slice doesnt change the og array but splice do change it .
+- _splice_ is used to delete elements permanently from the array
+
+### Reverse method
+
+- Changes the og array and reverses it.
+
+### Math.abs method
+
+- It'll always rerturn positive values , and any value is negative then it'll be converted into positive.
+
+* Can be used to extract and trace that which values are positive and which are negative.
+
+### forEach method
+
+- Used to track all the values and store it in arguments using loop to iterate .
+- Syntax :- (currentElement , indexNUmber , array)
+- _forEach_ with _Map_ will give proper key and vlue combination.
+
+### entries() Method
+
+- Used to extract (index , values) from arrays.
+
+## Set
+
+- These are unique values . They have (value , arr) and not index .
+
+## Map Method
+
+- Loops over array , does not change the og array, easier than forEach .
+- It uses function and callback functions for desired output.
+
+## Cannot read property error (this keyword)
+
+- When we use any method ,which have this keyword in it, with any button , then the this keyword will be transferred to the button and the error will be displayed.
+- At such time , using **bind** to join the function with its original method solves the issue.
+- Its tough to recognise this error if we dont have proper knowledge .
