@@ -490,10 +490,8 @@ Means the order on which the functions are dependent on other functions are writ
 ### Arrow functions
 
 - Arrow functions do not get their own 'this' keyword, it'll point 'this' of surrounding function.
-
-* The surrounding function can be the parent function of that arrow function and if its not a child function , then it'll show window function.
-
-* Never use arrow function as a method (means function inside an object).
+- The surrounding function can be the parent function of that arrow function and if its not a child function , then it'll show window function.
+- Never use arrow function as a method (means function inside an object).
 
 ```JS
  let vansh = {
@@ -662,6 +660,7 @@ Means the order on which the functions are dependent on other functions are writ
 ## Working with strings
 
 - `slice` method is used to extract the value certain value from an array and can also slice elements(means any words or numbers). `slice(startValue , endValue)` .
+- `splice` method is used to remove the elements from the array and delete it.
 - _-1_ in slice refers to the last value & in `indexOf` it refers to the value which is not present. NOTE :- indexOf is case sensitive method.
 - `trim` is used to remove the blank spaces.
 - `replace` & `replaceAll` is used to replace first value or all values respectively . `replace(oldVal , newVal)`
@@ -739,9 +738,16 @@ Means the order on which the functions are dependent on other functions are writ
 
 ### forEach method
 
+- It iterates the loop and save in console too one by one.
 - Used to track all the values and store it in arguments using loop to iterate .
 - Syntax :- (currentElement , indexNUmber , array)
 - _forEach_ with _Map_ will give proper key and vlue combination.
+
+## Map Method
+
+- It saves as one new array rather than iterating each step.
+- Loops over array , does not change the og array, easier than forEach .
+- It uses function and callback functions for desired output.
 
 ### entries() Method
 
@@ -751,13 +757,42 @@ Means the order on which the functions are dependent on other functions are writ
 
 - These are unique values . They have (value , arr) and not index .
 
-## Map Method
-
-- Loops over array , does not change the og array, easier than forEach .
-- It uses function and callback functions for desired output.
-
 ## Cannot read property error (this keyword)
 
 - When we use any method ,which have this keyword in it, with any button , then the this keyword will be transferred to the button and the error will be displayed.
 - At such time , using **bind** to join the function with its original method solves the issue.
 - Its tough to recognise this error if we dont have proper knowledge .
+
+## setTimeOut
+
+- setTimeOut will literally take value in the form of millisecond and will run that function after the specified time.
+
+## setInterval && clearInterval
+
+- Will continously keep adding the specified value after the specified time value .
+- Will stop if clearInterval is applied to the variable the setInterval is assigned.
+
+## CSS of banklist
+
+- We use margin to align any value in the end or start of the row .
+- grid-row is used to arrange the order in which any column will be displayed. Similar with the column. We use numbers to define the row number , ie , how down it'll be in the web page.
+
+## Map Vs Reduce Vs Filter
+
+- Map :- is used to edit elements of an array and store them in a new array . EG:- TO multiply the arr elements and store it.
+- Reduce :- is used to form a single element from a big array . For eg :- Adding all the elements of an array .
+- Filter :- Used to remove certain elements based on the condition .
+
+## insertAdjacentHTML
+
+- Used to import html content in js file and link it .
+- We need to specify the position where we want to add that element in the html in its syntax.
+- There are 2 arguments in this method , 1st says the position where we want to add and 2nd says is the variable where we have stored the html code in js file.
+
+## innerHTML
+
+- Used to set or return or edit the html content in js or by js.
+
+## Arrow function
+
+- Arrow function doesnt need return keyword or semicolon if only one line code is present.
