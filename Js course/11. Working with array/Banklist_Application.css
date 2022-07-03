@@ -30,6 +30,70 @@ nav {
   padding: 0 2rem;
 }
 
+.login__btn , .form__btn{
+  width: 45px;
+  height: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  /* Used to make it aligned with other 2 buttons */
+  top: 2.5px;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+
+
+.login__btn:before , .form__btn:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.login__btn:active , .form__btn:active {
+  color: #000
+}
+
+.login__btn:active:after , .form__btn:active:after {
+  background: transparent;
+}
+
+.login__btn:hover:before , .form__btn:hover:before {
+  opacity: 1;
+}
+
+.login__btn:after , .form__btn:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
 .welcome {
   font-size: 1.9rem;
   font-weight: 500;
@@ -66,22 +130,6 @@ nav {
   color: #bbb;
 }
 
-.login__btn {
-  border: none;
-  background: none;
-  font-size: 2.2rem;
-  color: inherit;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.login__btn:hover,
-.login__btn:focus,
-.btn--sort:hover,
-.btn--sort:focus {
-  outline: none;
-  color: #777;
-}
 
 /* MAIN */
 .app {
@@ -94,7 +142,8 @@ nav {
   gap: 2rem;
 
   /* NOTE This creates the fade in/out anumation */
-
+  opacity : 0;
+  transition : all 1s;
 }
 
 .balance {
@@ -158,7 +207,7 @@ nav {
 }
 
 .movements__type--withdrawal {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  background-image: linear-gradient(to top left, #ee3b68, #ff585f);
 }
 
 .movements__value {
@@ -221,7 +270,7 @@ nav {
 }
 
 .operation--close {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  background-image: linear-gradient(to top left, #e42253, #ff585f);
 }
 
 h2 {
@@ -265,23 +314,10 @@ h2 {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+
 .form__label {
   font-size: 1.3rem;
   text-align: center;
-}
-
-.form__btn {
-  border: none;
-  border-radius: 0.7rem;
-  font-size: 1.8rem;
-  background-color: #fff;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.form__btn:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .logout-timer {

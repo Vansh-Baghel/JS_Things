@@ -1,3 +1,13 @@
+# Author:- Vansh Baghel
+
+# Date:- 19-April-2022
+
+# Email :- vanshbaghel912@gmail.com
+
+# Linkedin & Twitter:- https://www.linkedin.com/in/vansh-baghel-24ab42232 https://twitter.com/VanshBaghel07
+
+# Feel free to contact me if you face any queries or errors.
+
 # Motivation
 
 ![motivation](./Resources_imgs%2Cpdfs/Motivation.jpeg)
@@ -570,7 +580,7 @@ Means the order on which the functions are dependent on other functions are writ
 * Used to check if any element or method exists or not.
 * Nullish and optional chaining are best combination to use .
 
-- All the written path before the question mark is been checked as its true or false.
+- All the written path before the _question mark_ is been checked as its true or false.
 - It works for methods (function inside object) to check if some items are present or not.
 - Also, works for array.
 
@@ -730,6 +740,10 @@ Means the order on which the functions are dependent on other functions are writ
 
 - Changes the og array and reverses it.
 
+### Math.trunc
+
+- The Math.trunc() function returns the integer part of a number by removing any fractional digits.
+
 ### Math.abs method
 
 - It'll always rerturn positive values , and any value is negative then it'll be converted into positive.
@@ -792,7 +806,147 @@ Means the order on which the functions are dependent on other functions are writ
 ## innerHTML
 
 - Used to set or return or edit the html content in js or by js.
+- Returns the html tag , while textContent returns only the text.
 
 ## Arrow function
 
 - Arrow function doesnt need return keyword or semicolon if only one line code is present.
+
+## reduce
+
+> Syntax :- (function(acc , current value , index , array{}), initial value of accumulator) .
+
+- Here , currentValue will be the second element of array , acc will be the first value or the default we set .
+- Here accumulator means the value formed from multiple elements.
+- acc can start with 0 even in any array , by putting 0 in `initial value` .
+- Can return the _maximum_ value too from many elements . Another way to get max is by `Math.max` .
+- We always return the accumulator .
+- Logic behind finding max :-
+
+  - Basically mov will be new acc if mov is greater .
+
+    acc = 1 , curr = 8 ; it'll return 8
+
+    now , arr = 8 , curr = 3 ; it'll return 8
+
+    now , arr = 8 , curr = 9 ; it'll return 9 .
+
+  - **_NOTE_** :- When acc is set to 0 , then first element will be the cur value and 0 will be acc.
+
+```JS
+a = [1,8,3,9]
+acc > curr ? acc : curr
+```
+
+## Chaining method
+
+- To use filter , reduce , map methods and arrow function together .
+
+## Find method
+
+- Used to find a particular element from array according to the given condition.
+- It returns only one element or first element even if multiple elements satisfies the condition .
+
+## preventDefault() method
+
+- Dont forget to use parenthesis as it doesnt throw error and can ruin your work . (Already happened)
+- This is used to prevent the reload of html page which blocks certain functions.
+- _form_ element of html requires this method .
+
+## findIndex Method
+
+- It finds the index of the element we ask , we can give conditions to find the proper element we desire.
+- It is not easy to find certain elements without condition , so this is the best practice of it.
+
+## indexOf VS findIndex
+
+- indexOf returns the index only for the element we write , we cannot write the condition in the parenthesis.
+- findIndex also returns the index , but it supports the conditions we want to provide.
+
+## includes() VS some() method
+
+- _some_ accepts condition and function or arrow function must be written in it .
+- _**Similarity**_
+  - Used to check if the element exist or not & it returns a boolean value.
+- _**Difference**_
+  - includes() takes only value and in some() method we can give the condition to reach the element we desire.
+
+## some() VS every()
+
+- **some** will return true if any elements of array satisfies the condition whereas **every** will return true only if all the values are true.
+
+## flat() method
+
+- It will combine a nested array into one array , and the default value is 1 level.
+- [flat explanation with example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+
+## flatMap
+
+- Since use of flat & map is too often , we can use this.
+- We can only go 1 level deep in this , to go deeper we have to use flat itself
+- We have to pass condition like Map in the parenthesis.
+
+## flat VS flatMap
+
+- _**Similarities**_ :-
+  - Both will change nested array to normal array one level deep
+
+## sort
+
+- It mutates the original array.
+- It converts the array in string values and arrange alphabetically.
+- We cannot sort numbers properly , as it will return negative first then all numbers starting from 1 and so on .
+- This is a rule for sorting numbers that if `return < 0, A, B (keep order)` & if `return > 0, B, A (switch order)` where A and B are 2 consecutive numbers.
+- To sort numbers , we use this
+
+```JS
+/* a, b are consecutive numbers of array. */
+// Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+
+/* If a > b , then ofc a - b will be positive , which satisfies the condition of swtich order. b - a for descending.*/
+movements.sort((a, b) => a - b);
+console.log(movements);
+```
+
+## new Array
+
+- If only one parameter is passed then it will create new array with those number os elements.
+
+## fill method
+
+- We can specify the element and position of it where we want to add in an array.
+- It is used to expand the existing array or to make any new array.
+
+## from method
+
+- Used to change each element of array .
+- Syntax :- ({length: 2} , arrowFn) . arrayFunction is used for passing condition and print them as elements till the length mentioned.
+
+## Exceptions
+
+- It is not any method or rule , it just means to manipulate certains words from sentence like toLower , toUpper and stuff and also keep certain words normal without being changed.
+
+## typeof
+
+- Used to check type of variable .
+- _typeof_ must be written properly , its not 'typeOf'
+
+## Where and how to use array
+
+![array usage](./Resources_imgs%2Cpdfs/Array%20usage.jpeg)
+
+## How to count array elements with certain condition
+
+- We can use length or even reduce for this work . Can check _Array practice methods_ file.
+
+## How to add new property in an object
+
+- We can use forEach or map method and without creating a new function , we can just do our task (see challenge 4 that how recFood was added in dogs object)
+
+## replace & split
+
+- These methods can only be used with strings , and not with arrays.
