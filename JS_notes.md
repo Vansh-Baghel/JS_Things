@@ -286,12 +286,14 @@ Number('123')   Explicit
 + '123'         Implicit
 ```
 
-# Coersion
+# Type Conversion
+
+- Means it converts the element datatype into
 
 ## Explicit VS Implicit
 
 - Explicit is said when we add the datatype into it.
-- Implicit is when we directly type the value without mentioning the datatype.
+- Implicit (also known as Type coercion) is when we directly type the value without mentioning the datatype.
 
 ```JS
 String(123) ----> '123'   Explicit Coersion.
@@ -669,6 +671,8 @@ Means the order on which the functions are dependent on other functions are writ
 
 ## Working with strings
 
+**While using these methods , convert the value into string and only these will be applicable**
+
 - `slice` method is used to extract the value certain value from an array and can also slice elements(means any words or numbers). `slice(startValue , endValue)` .
 - `splice` method is used to remove the elements from the array and delete it.
 - _-1_ in slice refers to the last value & in `indexOf` it refers to the value which is not present. NOTE :- indexOf is case sensitive method.
@@ -740,16 +744,6 @@ Means the order on which the functions are dependent on other functions are writ
 
 - Changes the og array and reverses it.
 
-### Math.trunc
-
-- The Math.trunc() function returns the integer part of a number by removing any fractional digits.
-
-### Math.abs method
-
-- It'll always rerturn positive values , and any value is negative then it'll be converted into positive.
-
-* Can be used to extract and trace that which values are positive and which are negative.
-
 ### forEach method
 
 - It iterates the loop and save in console too one by one.
@@ -777,11 +771,13 @@ Means the order on which the functions are dependent on other functions are writ
 - At such time , using **bind** to join the function with its original method solves the issue.
 - Its tough to recognise this error if we dont have proper knowledge .
 
-## setTimeOut
+## setTimeout && clearTimeout functions
 
+- The first value must always be a function & second is the time interval in millisecond.
+- clearTimeout is used to stop the setTimeout function , ie , to stop the timer.
 - setTimeOut will literally take value in the form of millisecond and will run that function after the specified time.
 
-## setInterval && clearInterval
+## setInterval && clearInterval functions
 
 - Will continously keep adding the specified value after the specified time value .
 - Will stop if clearInterval is applied to the variable the setInterval is assigned.
@@ -950,3 +946,96 @@ console.log(movements);
 ## replace & split
 
 - These methods can only be used with strings , and not with arrays.
+
+# 12 .
+
+## Number keyword and '+'
+
+- This keyword is used to convert string into numbers and also '+' sign does the same work .
+- EG:- `'+24'` = `24`
+
+## Number.parseInt
+
+- Used to convert any string into number and it automatically removes the characters out of string.
+
+## isNaN VS isInfinity
+
+- _isNan_ returns a boolean value and checks if the value is number or not , one bad output is that it doesnt consider the infinite value as false.
+- _isInfinite_ is the best method to check if any value is number or not , it do consider the infinite value as not a number.
+
+## Math function
+
+- We learnt `round, ceil , floor , trunc , min , max , random`
+- These are type coercion as they convert string into numbers .
+
+```JS
+'20' = 20
+20 = 20
+'20x' = NaN
+```
+
+### Math.random
+
+- Used to get any random number , but the decimals comes too big .
+- To avoid decimal issue , we use toFixed or trunc.
+
+### Math.trunc
+
+- The Math.trunc() function returns the integer part of a number by removing any fractional digits.
+
+### Math.abs method
+
+- It'll always rerturn positive values , and any value is negative then it'll be converted into positive.
+
+* Can be used to extract and trace that which values are positive and which are negative.
+
+### Condition of min to max range using Math.random
+
+```JS
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min) + 1) + min;
+// 0...1 -> 0...(max - min) -> min...max
+// console.log(randomInt(10, 20));
+```
+
+## toFixed(number of nos after decimal)
+
+- To print required number of decimals in one output , we use this.
+- It returns a string value
+
+## Numeric Separators
+
+- To show big numbers , we use _underscore_ to separate the numbers and in the output only number will be visible.
+
+## BigInt or n
+
+- To display too big number which JS cant handle .
+- We cannot mix BigInt with other numbers , we can only perform operations on 2 _BigInt_ .
+
+## Methods to create dates
+
+- **new Date** is one of method to find current date .
+- **Date.now()** gives us the timespan which is the millisecond from 1 Jan.
+- If we pass timespan in new Data then will get the date and time of that timespan.
+- We can get all things from date by using methods like _date,month,year,hour,min,sec_ .
+- _toISOString_ is used to store the date value into string. It refers to some international standard
+
+## Changing timezone using Intl
+
+- We use _new_ keyword before using it.
+- To get the date, time and all according to your timezone , we use **Intl.DateTimeFormat(locale,options).format(date)** .
+- Here ,
+
+1. locale => language-country .
+2. format => Used to say that which date we want to format.
+3. options => Used to add dates , hours , weekday , etc onto your output according to the time zone you entered . It is an object . The properties in it have keyword to access like to add _minutes_ , we use _minute_ and not min or minutes .
+4. Navigator.language :- If we pass this in locale, then the time zone will be automated with your browser.
+
+## To display difference between dates
+
+- We use 2 _days_ parameters and minus them , the result will get will be in millisecond .
+- To convert into days from millisecond , we divide them by _(1000 * 60 * 60 \* 24)_
+- If we have time passed in the day , the answer of difference in 2 days will be in decimal , so to fix that we use _Math.round()_ .
+- Use _Math.abs()_ to avoid printing the negative day difference.
+
+##
