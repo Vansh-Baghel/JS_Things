@@ -388,7 +388,7 @@ n3 ----> [1,2,3,4,5,6]
 
 # classList
 
-- Used to add, remove , toggle or replace the elements of html .
+- Used to add, remove , toggle , contains (to check if present) or replace the elements of html .
 
 # DRY code (Do Not Repeat Yourself)
 
@@ -1038,4 +1038,70 @@ const randomInt = (min, max) =>
 - If we have time passed in the day , the answer of difference in 2 days will be in decimal , so to fix that we use _Math.round()_ .
 - Use _Math.abs()_ to avoid printing the negative day difference.
 
-##
+# Advanced-DOM-and-Events
+
+![DOM diagram](/Resources_imgs%2Cpdfs/DOM%20explanation.jpeg)
+
+- DOM helps us to interact with HTML elements and modify the browser using Javascript.
+- We interact with the browser using DOM.
+- DOM is a type of API which contains alot of methods .
+- Every single DOM element is a node and these nodes in JS is represented by different types of objects.
+- All elements of HTML element has to go in DOM as well as per the rule , therefore all elements of HTML has access to many properties .
+- Each HTML element has its own unique properties and DOM stores it due to which we have different attributes to HTML elements like for a we have href.
+- Inheritance of methods and properties takes place , ie , HTML element has access to all methods of _Element_ as well as of _Node_ . We can also say that HTML element is also an _Element_ and a _Node_ since it comes under _Element_ and _Node_.
+- _queryselector_ comes under both Element and Document type.
+- We can call EventTarget on every single type of node into DOM API.
+
+## prepend VS append
+
+- Both methods are used to add elements in the html tag from JS.
+- _prepend_ is used to add the element in the start of certain parent element.
+- _append_ is used to add the element in the end of certain parent element.
+
+## before VS after
+
+- Syntax :- parentEl.before(addingEl)
+- Both methods are used to add elements in the html tag from JS.
+- It adds the element into HTML but as a sibling to other elements and not as child element.
+- _before_ adds the element before the parent element specified.
+- _after_ adds the element after the parent element specified.
+
+## before , after , prepend , append similarity
+
+- These elements can also be used to change the position of elements , and main working of them is to insert the element in html file .
+- Since DOM elements are unique , they cant be on different places at the same time , similarly these inserted element cannot be at 2 places at same time , for eg:- we cannot use append and after or before at the same time .
+- To add DOM elements are different places at the same time , we need to clone it. Cloning can be done by using =>
+  _cloneNode_ method.
+
+## cloneNode
+
+- Used to add an element at multiple places using DOM method ie from JS to html.
+
+## getComputerStyle
+
+- This method is used to use the CSS style to JS , we cannot get access to CSS file into JS without using this method.
+
+## root in CSS
+
+- root in CSS is same that of documentElement of JS .
+- It changes all the styles which have that particular style if _setProperty_ is used
+
+## setProperty(selectedStyle , newStyle)
+
+- We can change the value of existing CSS file using this method.
+
+## getAttribute & setAttribute
+
+- Attributes are the things we pass in html tag code .
+  EG:- class , id , onclick are the standard property .
+- When the attributes are non standard property wrt the html element , then we have to use these methods to get that attribute.
+- By _**setAttributes**_ we add the attribute into the tag ie inside the <> brackets it'll be added.
+- By _**getAttributes**_ we can get the value's name of any element .
+
+> EG :- for a , link:href => URL (path) ; link.getAttribute ()=> # or any website link which we have provided .
+
+## data attributes
+
+- Any attributes which starts with data are datasets
+- We use camel case to call it and get the answer even if in the attribute it is different .
+  > EG:- data-version-number in html , Element.dataset.versionNumber
