@@ -1105,3 +1105,7 @@ const randomInt = (min, max) =>
 - Any attributes which starts with data are datasets
 - We use camel case to call it and get the answer even if in the attribute it is different .
   > EG:- data-version-number in html , Element.dataset.versionNumber
+
+## window.pageXoffset & window.pageYoffset
+
+- Used to get the distance of the page from the top most of the view port to the current view port of your page .
