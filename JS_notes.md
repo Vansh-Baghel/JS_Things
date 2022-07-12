@@ -1109,3 +1109,9 @@ const randomInt = (min, max) =>
 ## window.pageXoffset & window.pageYoffset
 
 - Used to get the distance of the page from the top most of the view port to the current view port of your page .
+
+## getBoundingClientRect()
+
+- This get all the dimensions of the section we mention .
+- We can get the distance from top , left , right and so many more .
+- Used to scroll or just get the value.
