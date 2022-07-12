@@ -1115,3 +1115,13 @@ const randomInt = (min, max) =>
 - This get all the dimensions of the section we mention .
 - We can get the distance from top , left , right and so many more .
 - Used to scroll or just get the value.
+
+## scrollIntoView()
+
+- This method is used to scroll the page to the required position .
+- This is the modern way of doing so .
+- We can specify and add the effect by using _behaviour_ keyword in curly braces.
+
+## remove()
+
+- Used to delete any html element or paragraph from the webpage.

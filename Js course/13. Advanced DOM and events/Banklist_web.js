@@ -15,7 +15,14 @@ let header = document.querySelector(".header");
 
 let message = document.createElement("div");
 message.classList.add("cookie-message");
-message.innerHTML = `Mangal bhawan , mangal haari eeee , ram siya ram siya ram je je ram <button class = "btn btn--close"> Close </button`;
+message.innerHTML = `We use cookies for improved functionality <button class = "btn btn--close-cookie"> Close </button`;
 
 // header.prepend(message);
 header.after(message);
+
+document
+  .querySelector(".btn--close-cookie")
+  .addEventListener("click", function () {
+    message.remove();
+    console.log("idk");
+  });
