@@ -1125,3 +1125,23 @@ const randomInt = (min, max) =>
 ## remove()
 
 - Used to delete any html element or paragraph from the webpage.
+
+## target method
+
+- It shows the html element line of code from JS .
+- Can be helpful to which the block of code in console and to select certain class or id of the same.
+
+## Bubbling and Capturing
+
+![non-delegation](./Resources_imgs%2Cpdfs/non-delegation.png)
+![delegation](./Resources_imgs%2Cpdfs/delegation.png)
+
+- Used to make the website faster by avoiding the storing/running of each element and running the same event just once in the parent step.
+- This means that all the events that we put to the child element , will also be applicable to the parent element.
+- If we log the output into the parent element we avoid printing the outputs everytime we click onto some child element in case of eventListener as click .
+- Rather than using forEach to select multiple elements from a parent at every eventListener , we must use the _target_ and get the output in parent element itself.
+
+## closest
+
+- Used to avoid the event to take place on child element and to make it work for the parent element
+- closest method is used to let the JS know till which parent element it must go.
