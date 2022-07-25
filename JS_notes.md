@@ -1239,10 +1239,11 @@ const randomInt = (min, max) =>
 - We can catch any error and alert the code that error has happened rather than watching the rejection message in the console.
 - If we dont use **catch** function , then the console will have messae of rejection.
 - **catch** function accepts function and parameter which will include message which we want to keep.
-
+- Best place to use **console.error** which will highlight the error in console. 
 ### err
 
 - We can use **err** which is predefined error msg of JS.
+- _err.message_ is predefined method to throw the error message. 
 
 ### finally method
 
@@ -1254,5 +1255,7 @@ const randomInt = (min, max) =>
 - then runs when the promise is fulfilled , catch runs when the promise is rejected and finally runs for all cases.
 
 ### Throw method , Adding error messages manually
-
--
+ * We can use **throw new Error** to display a new error msg and change the default, mostly could use with _if_ statement. 
+ * It"ll run unless the error get caught ie till the **_catch_** method. 
+ * The **err.message** will change accordingly with this to the new statement which will assign. 
+ *
