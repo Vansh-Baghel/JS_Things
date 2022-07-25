@@ -807,6 +807,7 @@ Means the order on which the functions are dependent on other functions are writ
 ## Arrow function
 
 - Arrow function doesnt need return keyword or semicolon if only one line code is present.
+- It can be used for multiple liners tho but dont forgot to put the curly braces.
 
 ## reduce
 
@@ -1145,3 +1146,103 @@ const randomInt = (min, max) =>
 
 - Used to avoid the event to take place on child element and to make it work for the parent element
 - closest method is used to let the JS know till which parent element it must go.
+
+# Fetch API
+
+- Fetch API returns a promise.
+
+# 16. Asynchronous JS Promises
+
+## Asynchronous Code
+
+- Asynchornous code is non-blocking , ie, it doesn't stop the execution of code.
+- It lets other execution to take place, without disturbing the flow .
+- Once the execution of asynchronous code is done it is executed no matter the other flow of task.
+- We can control the flow of this code by **nested callback** & **Promises** . Promises is more modern type.
+
+## AJAX
+
+- AJAX is **Asynchronous Javascript And XML**.
+- It allows us to communicate with the website in asynchronous way.
+- We can _req_ or _post_ the data from the web page and the information of these web pages are stored in **Web APIs**.
+
+## Web API
+
+- Another term is Endpoints.
+- Its the application running on server that receives the requestes for data and sends data back as response.
+- While using any API , **CORS** (Cross Origin Resource Sharing) must be _Yes_ or _Unknown_ . Without it we cannot access third party API.
+- API are in the form of **JSON** and to convert them into readable format we must convert it using **parse**.
+
+## Controlling asynchronous behaviour
+
+- Old way to do this is to use **Nested Callback functions**.
+- New way is by using **Promise** .
+
+## Promises
+
+- It is a type of container for future value (which is asynchronously deliered value).
+- Why should we use Promises? **ADVANTAGES** :-
+  - We dont need to use callback functions and all will already be in sequences.
+  - We can chain promises for sequence tasks and escape the _Callback Hell_ .
+- Stages of promise:-
+  - Pending :- Before the future value is available.
+  - Settled :- Asynchronous task gets finished.
+    - Settled are of two types :-
+    1. Fulfilled :- It shows the success and we can access the information.
+    2. Rejected :- An error happened and we cannot access the API.
+- These promises are either rejected or accepted and once its done then its impossible to change .
+- These stages are seen when we try to **consume promise**.
+
+## Consume Promise
+
+- It means to use the data inside promise .
+- If theres no data present , we have to first build the promise .
+
+## Issues faced while using API
+
+- Without destructuring the API data, it wasnt working . `[data] and not data while assigning the variable name `
+
+## then method
+
+- We use **then** method on promises.
+- We have to pass a callback function and that function will be executed once the code is finished running.
+- We pass one argument in that function which will return the output of the fulfilled promise.
+- We need to pass the function for getting actual data in 2nd _then_ method.
+- Dont forgot to use **return** word as it has caused you error in this topic as well as in previous project too.
+
+## fetch function
+
+- fetch returns a promise.
+- We need to use **then** method to resolve the promise.
+- **json** method is attached to all _response_(resolved value) which we get by fetch method.
+- **json()** function is also asynchronous and therefore it will also have a new promise.
+- Therefore we need to call 2 **then** methods because the json() itself becomes a promise.
+- Whenever we want to add any value , make sure to use _headers_ object and convert the value into string by using _JSON.stringify_.
+- We need to pass the function for getting actual data in 2nd _then_ method.
+
+## Nested fetch
+
+- To use fetch as nested method , we need to return the **second fetch** method in the body of **second then** method.
+- The **second then** method will always return the fulfilled value.
+
+## Way to access properties from object
+
+- We can get it by using **for..in** loop we can get the key or value ka value.
+- By using _Object.keys_ or _Object.value_ , we can get the following.
+- To get the key pairs , use Object.key(object.property) .
+- You did this thing in **Region_API-task** which surely was on challenging task!! But am proud to do that :) .
+
+## Handling rejection / Catching error / catch() method
+
+- We can catch any error and alert the code that error has happened rather than watching the rejection message in the console.
+- If we dont use **catch** function , then the console will have messae of rejection.
+- **catch** function accepts function and parameter which will include any message or we can use **err** which is predefined error msg of JS.
+
+## finally method
+
+- This method will work in both the cases.
+- Best usage is the loading spinner when the promise is not appeared. Like the loading screen.
+
+## then , catch , finally
+
+- then runs when the promise is fulfilled , catch runs when the promise is rejected and finally runs for all cases.
