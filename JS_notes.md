@@ -1232,17 +1232,27 @@ const randomInt = (min, max) =>
 - To get the key pairs , use Object.key(object.property) .
 - You did this thing in **Region_API-task** which surely was on challenging task!! But am proud to do that :) .
 
-## Handling rejection / Catching error / catch() method
+## Handling rejection / Catching error
+
+### catch() method
 
 - We can catch any error and alert the code that error has happened rather than watching the rejection message in the console.
 - If we dont use **catch** function , then the console will have messae of rejection.
-- **catch** function accepts function and parameter which will include any message or we can use **err** which is predefined error msg of JS.
+- **catch** function accepts function and parameter which will include message which we want to keep.
 
-## finally method
+### err
+
+- We can use **err** which is predefined error msg of JS.
+
+### finally method
 
 - This method will work in both the cases.
 - Best usage is the loading spinner when the promise is not appeared. Like the loading screen.
 
-## then , catch , finally
+### then , catch , finally methods
 
 - then runs when the promise is fulfilled , catch runs when the promise is rejected and finally runs for all cases.
+
+### Throw method , Adding error messages manually
+
+-
