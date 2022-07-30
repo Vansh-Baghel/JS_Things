@@ -1324,6 +1324,7 @@ timer().then().then()
 
 ## async / await
 
+- Always wrap the whole code with **try** & **catch**
 - It is the best way to handle any ashychronous task.
 - We dont need to use any **then** method
 - We must store the **await** function in any variable , and then use it.
@@ -1336,3 +1337,39 @@ timer().then().then()
 - We have to wrap all the code of async function inside the curly braces of the try method .
 - Then we can use catch function to catch the error caused inside the file.
 - This method can be used for any function , not just specifically for async await.
+
+## async await return behaviour
+
+- It returns the **whole promise** even when we return some other string like _You are in India_.
+- It will not return the text , so to fix that we use **then** method which will get the **fulfilled** data and log the **return message**.
+- If the async function is rejected , even then the then method will return the fulfilled value but it will be undefined , it should return the error message which it doesn't.
+- To return the rejected message, we will **rethrow** the error , ie, will use `throw err;` at the **end** of the async function so that it reviews the error.
+
+## Combination functions (imp)
+
+- It takes in **array of promises** and returns a new promise.
+
+### Promise.all (imp)
+
+- Whenever we run a code using asynchronous code , the data we are passing might **not depend** on one another.
+- If the data is **imdependent** of other APIs , then it best to use **Promise.all** .
+- **Normal behaviour** without this method is that **code will run one after the another** , but by using this method all the **code will run parallel** , ie, simultaneously.
+- This **saves** alot of **time** for our web to load.
+- If we want to do it using async await , then simply use **await** for Promise.all and wrap all the promises inside the method.
+- Promise.all takes in **array of promises** and returns a new promise.
+- Remember , that if any one Promise gets rejected , then the whole array of promises will be rejected.
+
+### Promise.allSettled
+
+- Same as Promise.all but it'll work even if any promise is rejected.
+
+### Promise.race (imp)
+
+- This function also takes the array of promises as input .
+- It will return the promise which is executed the fastest among the arrays.
+- It is very useful in real world as we can use this function to fix the low speed internet of some people and can return only few values and can skip the loading of rest after some time interval if the array of promise is too large.
+- It returns the other promises even if one function is rejected .
+
+## Promise.any
+
+- Same as Promise.race just it returns the fulfilled value and ignoress the rejected values .
