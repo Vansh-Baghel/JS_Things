@@ -1164,7 +1164,9 @@ const randomInt = (min, max) =>
 
 - AJAX is **Asynchronous Javascript And XML**.
 - It allows us to communicate with the website in asynchronous way.
-- We can _req_ or _post_ the data from the web page and the information of these web pages are stored in **Web APIs**.
+- We can **req** or **post** the data from the web page and the information of these web pages are stored in **Web APIs**.
+
+![web to client](./Resources_imgs%2Cpdfs/api%20to%20client.jpeg)
 
 ## Web API
 
@@ -1209,6 +1211,7 @@ const randomInt = (min, max) =>
 - We pass one argument in that function which will return the output of the fulfilled promise.
 - We need to pass the function for getting actual data in 2nd _then_ method.
 - Dont forgot to use **return** word as it has caused you error in this topic as well as in previous project too.
+- Always log the data in the **second then** statement because the data maybe accessed from data[0] after selecting its first element of the API data.
 
 ## fetch function
 
@@ -1239,11 +1242,13 @@ const randomInt = (min, max) =>
 - We can catch any error and alert the code that error has happened rather than watching the rejection message in the console.
 - If we dont use **catch** function , then the console will have messae of rejection.
 - **catch** function accepts function and parameter which will include message which we want to keep.
-- Best place to use **console.error** which will highlight the error in console. 
+- Best place to use **console.error** which will highlight the error in console.
+- **Uncaught** word in message will not be shown anymore.
+
 ### err
 
 - We can use **err** which is predefined error msg of JS.
-- _err.message_ is predefined method to throw the error message. 
+- _err.message_ is predefined method to throw the error message.
 
 ### finally method
 
@@ -1255,7 +1260,79 @@ const randomInt = (min, max) =>
 - then runs when the promise is fulfilled , catch runs when the promise is rejected and finally runs for all cases.
 
 ### Throw method , Adding error messages manually
- * We can use **throw new Error** to display a new error msg and change the default, mostly could use with _if_ statement. 
- * It"ll run unless the error get caught ie till the **_catch_** method. 
- * The **err.message** will change accordingly with this to the new statement which will assign. 
- *
+
+- We can use **throw new Error** to display a new error msg and change the default, mostly is used with _**if**_ statement in **first then method**.
+- Name inside if statement must be the same of that in **then**.
+- Remember that after using this , we have to return the res.json() value for it to work.
+- It"ll run unless the error get caught ie till the **_catch_** method.
+- The **err.message** will change accordingly with this to the new statement which will assign.
+
+![async_behind the scene](./Resources_imgs%2Cpdfs/async_behind%20the%20scenes.jpeg)
+
+## ok method
+
+- Condition inside **if** can be **!(parameterName).ok** for **reject** argument.
+
+## Asynchronous behind the scene (Theory)
+
+- All the asynchronous tasks work in the environment of web APIs.
+- **Callback queue** is the place where events happen , and where the asynchronous task waits after completing .
+- **Event Loop** checks that is the callstack is empty or not , and if its empty then it will take first task from **callback queue** and place it inside the callstack .
+- Each time an event loop takes a callback from callback queue , we say that there was an **event loop tick**.
+- And in this way , asynchronous code works in non-blocking way . It waits other callback queue tasks to finish and then its executed.
+- The callbacks from fetch goes in **microtasks queue** where it has the priority to be executed before the tasks present inside the **callback queue**.
+- So in other words , once the fetch callback execution is completed, then it will **run directly without waiting** for other tasks present inside the callback queue to be executed .
+
+## Promisifying
+
+- It means to convert the callback based asynchronous behaviour into promise based.
+- Like by using this we will be able to use fetch function as **nested fetch** rather than putting the callback functions and avoiding the callback hell.
+- In simpler words we are creating nested fetch promises which will be needing in the first fetch function.
+- We use a variable as a function like
+
+```JS
+let timer = function(){
+  return new Promise function (resolve , reject){
+    code
+  }
+}
+
+timer().then().then()
+```
+
+## new Promise function
+
+- It accepts two parameters **resolve** and **reject** .
+- In the **catch** function , the value inside the **reject function** will be printed.
+- Any condition in **resolve** will be fulfilled! and in the **reject** will be rejected.
+- We must not forget to put **timer** to make it asynchronous as the whole idea about the Promise function is to make it that.
+- We just create the resolve and reject conditions , rest of the work of putting **then** is done later by using the promise function variable.
+
+## Promise.resolve & Promise.reject
+
+- These 2 functions are used to resolve or reject the input values **immediately**.
+- It will be the next value inside the **microtask queue** and will be executed before the other **callback queue** tasks.
+
+## setTimeout using resolve
+
+- We pass **2 arguments** in the setTimeout function , and as the first argument we will pass the **resolve** word/value and in second simply the timer value.
+
+## load eventHandler
+
+- We use load when any task is taking place , like if something is loading and once its finished this function will work.
+- To put any image from JS , we must always use **load** function as it makes the work easy and can handle it asynchronously.
+
+## async / await
+
+- It is the best way to handle any ashychronous task.
+- We dont need to use any **then** method
+- We must store the **await** function in any variable , and then use it.
+- In **await** function we pass the **fetch** and **json()** step into the paranthesis.
+- We can use more than one await funtions and can use **many API** in one **async** function , which will avoid the use of **callback hell** or **nested fetch** method.
+- We **cannot use catch()** method in async await.
+
+## try and catch
+
+- We have to wrap all the code of async function inside the curly braces of the try method .
+- Then we can use catch function to catch the error caused inside the file.
+- This method can be used for any function , not just specifically for async await.

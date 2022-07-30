@@ -61,12 +61,12 @@ function nations(country) {
 nations("India");
  */
 
-let nations = function (country) {
+/* let nations = function (country) {
   // fetch returns a promise and to resolve the promise we need to use then
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then((response) => response.json())
     .then((data) => {
-      /* data[0] is used because the promise in the data had 2 objects with the outer index as 0 and 1. */
+      /* data[0] is used because the promise in the data had 2 objects with the outer index as 0 and 1. 
       renderCountry(data[0]);
 
       let neighbour = data[0].borders[0];
@@ -77,8 +77,9 @@ let nations = function (country) {
     })
     .then((response) => response.json())
     .then(
-      (data) => renderCountry(data[0], "neighbour") /* console.log(data[0] */
+      (data) => renderCountry(data[0], "neighbour") /* console.log(data[0] 
     );
 };
 
 nations("India");
+ */
