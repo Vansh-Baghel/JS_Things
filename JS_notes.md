@@ -388,6 +388,7 @@ n3 ----> [1,2,3,4,5,6]
 
 # classList
 
+- This can be the best to use while playing with CSS like add or removing any class .
 - Used to add, remove , toggle , contains (to check if present) or replace the elements of html .
 
 # DRY code (Do Not Repeat Yourself)
