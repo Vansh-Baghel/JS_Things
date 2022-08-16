@@ -1374,3 +1374,24 @@ timer().then().then()
 ## Promise.any
 
 - Same as Promise.race just it returns the fulfilled value and ignoress the rejected values .
+
+## DOM traversing
+* It means the ways to find or select HTML elements based on their relation to other elements.
+ 
+ ### .children
+ * It is used to select all HTML child elements present in a parent element.
+ * * Works only for direct children.
+ 
+ ### closest
+ * It selects the closest parent element for the element which we select.
+ * If there are multiple parent elements and we want to select the direct parent then this method is usefull.
+ * Same like querySelector just difference is querySelector selects child elements and this selects parent element.
+ 
+ ### parentElement
+ * Selects the parent element for an element.
+
+ ### previousSibling , nextSibling and parentElement.children
+ * To select all ibling elements , we can use parentElement.children which will go to the parent element and then all the elements children of it (ie siblings).
+ * for eg:- to select siblings of h1 element which is inside div with h2, h3 ; we will select div and then its children which will be h1 ,h2 ,h3.
+ 
+
