@@ -1393,5 +1393,12 @@ timer().then().then()
  ### previousSibling , nextSibling and parentElement.children
  * To select all ibling elements , we can use parentElement.children which will go to the parent element and then all the elements children of it (ie siblings).
  * for eg:- to select siblings of h1 element which is inside div with h2, h3 ; we will select div and then its children which will be h1 ,h2 ,h3.
+
+## mouseover and mouseout event handlers
+* These are like hover and non hover in JS .
+* We can handle the events of hover and change other element of html k properties too.
+* mouseout will undo the effect we added as soon as we remove the hover.
+
  
+
 
