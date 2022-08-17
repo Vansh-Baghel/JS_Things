@@ -1439,9 +1439,14 @@ timer().then().then()
 * Each object is prototype and prototypes have predefined methods which all objects can use.
 
 ## new keyword
-* We assign a variable to a function and we can call it using another variable which will contain **new** keyword with first variable name.
+* We assign a variable to a function (constructor function) and we can call it using another variable (will become object) which will contain **new** keyword with first variable name.
 * While calling , we have to pass values to the arguments and inside the real function we can use **this.name = name**
 
-## constructorFunction ka Variable.prototype
+## constructorFunction ka Variable.prototype.value
 * Here variable will be the one which has new keyword present.
 * Prototype is **not** the prototype of variable but it is the prototype of all objects which contain the contructor function ie the variable.
+* This is prototypal inheritance and object will be able to use the value assigned in this prototype.
+
+
+
+
