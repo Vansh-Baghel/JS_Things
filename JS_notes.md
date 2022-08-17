@@ -1431,4 +1431,13 @@ timer().then().then()
 * By putting script defer in head, we reduce the time of web to load .
 * By using this , fetch and parse of htnl takes place tgt and then JS is run. On the other hand , in script in body parse, fetch and then run takes place.
 
+# OOP
+## Instantiated
+* Objects are instantiated from class, ie , objects re created from class.
 
+## Prototypal Inheritance
+* Each object is prototype and prototypes have predefined methods which all objects can use.
+
+## new keyword
+* We assign a variable to a function and we can call it using another variable which will contain **new** keyword with first variable name.
+* By this , we can give values to the parameters
