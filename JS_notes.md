@@ -1404,6 +1404,7 @@ timer().then().then()
 * **options** have predefined values like root, threshold , rootMargin , etc .
 * **threshold** means the amount of that element visible to trigger the callback function, if its 0 or null, it means even if element is not visible in viewport then aso function will run
 * **rootMargin** it accepts only pixels values wrt the threshold of an element and will trigger the functions once its satified.
+* Number of threshold values willl be equal to the number of entries in the callback function.
 * callback function will have the conditions which will be put according to the option values.
 * We can add cool animations using this method.
 * Combination of **classList** and **observe** could let us add different animations while scrolling.
