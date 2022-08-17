@@ -1418,4 +1418,13 @@ timer().then().then()
 
 ## Slider
 * Idea is to use **translateX** and **overflow hidden** and to place all the boxes next to each others.
-* 
+* We can subtract the currentSlide ka value with the indexNumber of element, for eg, if box is second and we are on 1st slide then calculation will be **translateX((100) * 2 - 1)** and in this way we can use slide.
+* If slide reaches its limit, ie , the length of slides - 1 then the currentSlide should be 0 to go on 1st slide.
+* To create backslide we must decrement currentSlide which will act to add up values in the translateX .
+* And if currentSlide is 0 then currentSlide must change to go to last box ie length - 1.
+
+## keydown eventListener
+* By using this , we can get to know which key we are pressing and with this we can assign different functions to different buttons.
+* By using data-set ka value we will go to the slide clicked by dots by checking if the container of click event contains dots or not.
+
+
