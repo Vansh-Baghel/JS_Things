@@ -1404,9 +1404,14 @@ timer().then().then()
 * **options** have predefined values like root, threshold , rootMargin , etc .
 * **threshold** means the amount of that element visible to trigger the callback function, if its 0 or null, it means even if element is not visible in viewport then aso function will run
 * **rootMargin** it accepts only pixels values wrt the threshold of an element and will trigger the functions once its satified.
+* **isIntersection** is a part of entry object which says that the element is present in the viewport or not, if not then it'll be false.
 * Number of threshold values willl be equal to the number of entries in the callback function.
 * callback function will have the conditions which will be put according to the option values.
 * We can add cool animations using this method.
 * Combination of **classList** and **observe** could let us add different animations while scrolling.
 
-
+## Lazy loading idea
+* Normally the images on big pages are in mb, which will lower rhe performance of loading the web page or making it slower.
+* With lazy loading , we will replace the og image with low resolution one and blur it, and by using **observe** we will replace the low resolution image with the og one.
+* This will maintain the performance of website and looks good too.
+* 
