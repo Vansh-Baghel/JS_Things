@@ -1440,4 +1440,8 @@ timer().then().then()
 
 ## new keyword
 * We assign a variable to a function and we can call it using another variable which will contain **new** keyword with first variable name.
-* By this , we can give values to the parameters
+* While calling , we have to pass values to the arguments and inside the real function we can use **this.name = name**
+
+## constructorFunction ka Variable.prototype
+* Here variable will be the one which has new keyword present.
+* Prototype is **not** the prototype of variable but it is the prototype of all objects which contain the contructor function ie the variable.
