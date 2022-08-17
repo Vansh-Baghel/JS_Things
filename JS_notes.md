@@ -1427,4 +1427,8 @@ timer().then().then()
 * By using this , we can get to know which key we are pressing and with this we can assign different functions to different buttons.
 * By using data-set ka value we will go to the slide clicked by dots by checking if the container of click event contains dots or not.
 
+## script defer in head
+* By putting script defer in head, we reduce the time of web to load .
+* By using this , fetch and parse of htnl takes place tgt and then JS is run. On the other hand , in script in body parse, fetch and then run takes place.
+
 
