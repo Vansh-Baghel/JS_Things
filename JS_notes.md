@@ -1416,3 +1416,6 @@ timer().then().then()
 * This will maintain the performance of website and looks good too.
 * We must use **rootMargin** to avoid our users to see the lazy loading because low pixel images looks ugly.
 
+## Slider
+* Idea is to use **translateX** and **overflow hidden** and to place all the boxes next to each others.
+* 
