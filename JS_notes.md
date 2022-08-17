@@ -1414,4 +1414,5 @@ timer().then().then()
 * Normally the images on big pages are in mb, which will lower rhe performance of loading the web page or making it slower.
 * With lazy loading , we will replace the og image with low resolution one and blur it, and by using **observe** we will replace the low resolution image with the og one.
 * This will maintain the performance of website and looks good too.
-* 
+* We must use **rootMargin** to avoid our users to see the lazy loading because low pixel images looks ugly.
+
