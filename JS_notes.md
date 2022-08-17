@@ -1447,6 +1447,14 @@ timer().then().then()
 * Prototype is **not** the prototype of variable but it is the prototype of all objects which contain the contructor function ie the variable.
 * This is prototypal inheritance and object will be able to use the value assigned in this prototype.
 
+## Prototype
+
+* By using prototype , we can see methods which a variable or object can use.
+* If we have an array then **Array.prototype** or **arrayName.__proto__** will show us all the methods which we can use with array and here Array.prototype points all the arrays and other one specifies particular array.
+
+
+
+
 
 
 
