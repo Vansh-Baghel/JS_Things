@@ -1399,6 +1399,9 @@ timer().then().then()
 * We can handle the events of hover and change other element of html k properties too.
 * mouseout will undo the effect we added as soon as we remove the hover.
 
- 
-
+## observe and new IntersectionObserver
+* These methods are used to track the viewport and trigger a **function** when it satisfies the values of **options**.
+* **options** have predefined values like root, threshold , rootMargin , etc .
+* **threshold** means the amount of that element visible to trigger the callback function, if its 0 or null, it means even if element is not visible in viewport then aso function will run
+* **root** 
 
