@@ -1462,8 +1462,12 @@ timer().then().then()
 * **set** must have one argument compulsorily and we can give value to the parameter by using equal to sign and not like regular function. Eg:- 'acc. latest(50) NO ; acc. latest = 50' He's
 
 * **get** is declared inside object and we don't call it as methods but as a normal property. 
+* setters and getters can be useful for **data validation** like to check if data is correct or not. 
 
+## Static methods
 
+* These methods are applicable on the constructor function itself and not on the prototypes, like **from** method can only be used as **Array.from()** and not like **[23,2,1].from()** . 
+* Similarly, parseFloat is used with _Number_.
 
 
 
