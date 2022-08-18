@@ -1471,7 +1471,9 @@ timer().then().then()
 * These are not available for **instances** but for the **constructor function** itself and for instances we have instance method.
 * Syntax for both methods are different ie static and instance.
 
-
+## Object.create
+* Here the prototype is the name of **constructor function** itself which we pass in brackets , and in normal way it used to be **Person.prototype**.
+* Its confusing to understand ;-; .
 
 
 
