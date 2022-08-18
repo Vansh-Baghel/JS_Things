@@ -1468,6 +1468,12 @@ timer().then().then()
 
 * These methods are applicable on the constructor function itself and not on the prototypes, like **from** method can only be used as **Array.from()** and not like **[23,2,1].from()** . 
 * Similarly, parseFloat is used with _Number_.
+* These are not available for **instances** but for the **constructor function** itself and for instances we have instance method.
+* Syntax for both methods are different ie static and instance.
+
+
+
+
 
 
 
