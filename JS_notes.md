@@ -1452,6 +1452,16 @@ timer().then().then()
 * By using prototype , we can see methods which a variable or object can use.
 * If we have an array then **Array.prototype** or **arrayName.__proto__** will show us all the methods which we can use with array and here Array.prototype points all the arrays and other one specifies particular array.
 
+## class (modern way of prototypal inheritance) 
+* Here we use **constructor** keyword and pass parameters in it which will be inside class. 
+* We don't need to specify the methods which we assign separately in normal traditional way, instead we declare them inside the class itself and it doesn't belong to class but belongs to the prototypes of that class. 
+* Creating classes rather than function keeps it small and clean but understanding prototypal inheritance is must. 
+
+## Setters and Getters
+* These are special properties called as **assessor** properties. 
+* **set** must have one argument compulsorily and we can give value to the parameter by using equal to sign and not like regular function. Eg:- 'acc. latest(50) NO ; acc. latest = 50' He's
+
+* **get** is declared inside object and we don't call it as methods but as a normal property. 
 
 
 
