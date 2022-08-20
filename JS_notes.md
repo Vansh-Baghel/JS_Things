@@ -1470,6 +1470,7 @@ timer().then().then()
 * Similarly, parseFloat is used with _Number_.
 * These are not available for **instances** but for the **constructor function** itself and for instances we have instance method.
 * Syntax for both methods are different ie static and instance.
+* Cannot use **this** keyword for static methods , we have to specify the className even if that static method is used inside the class itself.
 
 ## Object.create
 * Here the prototype is the name of **constructor function** itself which we pass in brackets , and in normal way it used to be **Person.prototype**.
