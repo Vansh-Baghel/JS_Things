@@ -1432,30 +1432,48 @@ timer().then().then()
 * By using this , fetch and parse of htnl takes place tgt and then JS is run. On the other hand , in script in body parse, fetch and then run takes place.
 
 # OOP
+> **JavaScript doesn't have classes** !!
+
 ## Instantiated
 * Objects are instantiated from class, ie , objects re created from class.
 
 ## Prototypal Inheritance
 * Each object is prototype and prototypes have predefined methods which all objects can use.
 
-## new keyword
-* We assign a variable to a function (constructor function) and we can call it using another variable (will become object) which will contain **new** keyword with first variable name.
-* While calling , we have to pass values to the arguments and inside the real function we can use **this.name = name**
+## constructor function
+* These functions produce objects because JavaScript doesn't have classes. 
+* It contains a function which takes arguments and we use **this** keyword to point the **instances** of that object.
+```JS
+// Person is an object , and this is a constructor function.
+const Person = function (age, name){
+  this.age = age;
+  this.name = name;
+}
 
-## constructorFunction ka Variable.prototype.value
-* Here variable will be the one which has new keyword present.
-* Prototype is **not** the prototype of variable but it is the prototype of all objects which contain the contructor function ie the variable.
-* This is prototypal inheritance and object will be able to use the value assigned in this prototype.
+// Here vansh is an instance which is created . Similarly , we can create many different instances.
+const vansh = new Person(18 , "Vansh");
+console.log(vansh);
+```
+
+## Instances of objects 
+* We know that JavaScript doesn't have classes , it has objects .
+* Instances are created by calling different ojects using **new** keyword.
+```JS
+// Person is an object
+const Person = function (age, name){
+  this.age = age;
+  this.name = name;
+}
+// vansh is an instance of Person object.
+const vansh = new Person(18 , "Vansh");
+```
 
 ## Prototype
 
-* By using prototype , we can see methods which a variable or object can use.
-* If we have an array then **Array.prototype** or **arrayName.__proto__** will show us all the methods which we can use with array and here Array.prototype points all the arrays and other one specifies particular array.
-
-## class (modern way of prototypal inheritance) 
-* Here we use **constructor** keyword and pass parameters in it which will be inside class. 
-* We don't need to specify the methods which we assign separately in normal traditional way, instead we declare them inside the class itself and it doesn't belong to class but belongs to the prototypes of that class. 
-* Creating classes rather than function keeps it small and clean but understanding prototypal inheritance is must. 
+* It **creates and increment** methods under certain objects .
+* The object will **not** contain this method as we create it outside the object but the **instance** can have **access** to this Prototype method.
+* By using prototype , we can use any content inside object which it inherites . 
+> Note that the object doesn't actually contain this method but we can access them via instances .
 
 ## Setters and Getters
 * These are special properties called as **assessor** properties. 
@@ -1473,11 +1491,89 @@ timer().then().then()
 * Cannot use **this** keyword for static methods , we have to specify the className even if that static method is used inside the class itself.
 
 ## Object.create
-* Here the prototype is the name of **constructor function** itself which we pass in brackets , and in normal way it used to be **Person.prototype**.
-* Its confusing to understand ;-; .
+* Here the prototype is the name of **constructor function** itself , and in normal way it used to be **Person.prototype**.
+* In object.create paranthesis , we pass the name of the prototype function.
+```JS
+// 
+const PersonProto = {
+    // Just a function
+    calcAge(age){
+      console.log(`The age is ${this.age}`);
+    },
 
+    // Function which avoids us to repeat the .name .age everytime while creating variables inside the object
+    info(name , age , gender){
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+  }
+  
+  // vansh & dhruvi are ref variables of 2 different objects which will have access to all content inside the class PersonProto.
+  const vansh = Object.create(PersonProto);
+  const dhruvi = Object.create(PersonProto);
+  vansh.name = "Vansh";
+  vansh.age = 18;
+  console.log(vansh.name);
+  // Here we are calling calcAge method to run by reference variable vansh.
+  vansh.calcAge();
+  dhruvi.info('Dhruvi' , 18 , 'Female');
+  console.log(dhruvi.name , dhruvi.age , dhruvi.gender);
+```
 
+## Prototypal Chain 
+* Before learning inheritance , we must know what is prototypal chain.
+[Prototype-Chain](./Resources_imgs%2Cpdfs/Prototype%20Chain.jpeg)
+* Every Object in JS has a prototype .
+* In the above image , constructor function of object is the **default builtin** function in JS . 
+* Every parent constructor function points to it **by default**. 
+* The prototype of Object constructor function is **null** , because it itself includes everything like methods and stuffs which could be used as **predefined methods** .  
+* Constructor function **Person** can have access to all methods **inside the builtin Object** function , and new instances created inside the objects will have prototype of their parent object ie they will be able to use content of parent object and also could create their own functions with additional to existing ones . 
+* Note that the instances can have access to builtin functions but cannot have access in case of inheritance . 
 
+## How Prototypal Inheritance 
+[Prototypal Inheritance](./Resources_imgs%2Cpdfs/Prototypal%20Inheritance.jpeg)
+* Once we understand prototypal chain , we can understand inheritance easily. 
+* Here , if the instance is of object which is already a child of another object , then the instance cannot have access of the parent object.
+* To get its access , the child object must have the prototype of parent object . To do so , we do **Object.create()** because it **sets the prototype manually** which is what we want.
+[Good anf Bad Practice](./Resources_imgs%2Cpdfs/Good_Bad_Practice.jpeg)
+* With this , instance will be able to use content of parent class as well.
+* To have access to all content of parent object in instance , we use **call** method because we want ot call the parent object and at the same time want to point to **this** keyword.
+EG: - 
+```JS
+const Student = function (fName , lName , course){
+  // Person is parent object. This syntax will make to the fName , lName of the parent object and not to the Student one.
+  Person.call(this , fName , lName);
+  this.course = course;
+}
+```
 
+## Classes in JS
+* We do not really have classes in JS, but we can use them same as we use in Java . 
+* We have all **super() , constructor , class keyword , extends , and everything** in JS too . But before using them , we must have knowledge about **Prototypal Inheritance** . 
+* Because behind the scenes its prototypal inheritance which is happening and class keyword and rest of the thing is just **syntactic sugar**.
+* Inheritance using this is same as inheritance we do in Java.
 
+## Private concept
+* In JS , we use **#** to make anything private .
+* Private fields cannot be used outside class. Fields are basically instances .
+* Private methods doesn't exist yet. 
+* Before using private instances , we need to initialize them in the start.
 
+## Chaining method
+* When we want to use chaining , just return this inside the method which you want to use as a chain.
+EG: - 
+```JS
+hobby(game){
+  console.log(this.game);
+  return this;
+
+food(fav){
+  console.log(this.food);
+  return this;
+}
+
+// Imagine s1 as object which can use both of these functions.
+s1.hobby("GAMES").food("Any FOOD");
+}
+```
