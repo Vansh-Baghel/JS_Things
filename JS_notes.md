@@ -147,8 +147,29 @@ let genderProperty = "gender";
 
 - Basically, **Primitve** is **Pass by value** & **Reference** is **Pass by reference**.
 - Check out `Primitive VS Reference Datatypes` file.
-
 * Research more from google.
+* Primitive data types are copied by value and Objects are copied by reference means object value points to same object and primitive datatypes points to different objects .
+EG : 
+```JS
+let num = 10;
+
+function increase(num){
+num++;
+}
+
+increase(num);
+console.log(num);   //ans : 10
+
+<!-- for object -->
+let obj = {value : 10};
+
+function increase(obj){
+  obj.value++;
+}
+
+increase(obj);
+console.log(obj);   //ans : 11
+```
 
 ## Ways to clone an Object
 
