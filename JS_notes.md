@@ -483,8 +483,28 @@ Means the order on which the functions are dependent on other functions are writ
 ## Hoisting
 
 - It makes some types of variables accessible before they get declared.
+* WE cant use hoisting for **let** & **const** variables and it'll throw show _uninitialized_, functions work & var shows weird behaviour by giving the output as **undefined**.
+* Variables and functions can be hoisted means it could be used before declaring them because behind the scenes during compilation , JS stores all the declaration and then starts the execution phase to make the variables and functions work.
+EG:
+```JS
+<!-- Function is called before getting declared , but it'll work. -->
+randomFunction()
+function randomFunction(){code}
 
-* WE cant use hoisting for **let** & **const** variables and it'll throw show _uninitialized_, functions work & var shows weird behaviour by giving the output as **undefined**..
+<!-- Variable used before declaration -->
+a = 10;
+let a;
+
+<!-- These wont work because both are assigned a reference variable and whenever we assign ref var then it gives undefined. -->
+function ays(){
+console.log(tell);
+let tell = "HI";
+}
+
+willItWork();
+
+let willItWork = function(){code};
+```
 
 ### TDZ (Temporal Dead Zone)
 
